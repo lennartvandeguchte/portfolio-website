@@ -19,6 +19,7 @@
   --color-accent: #ff6b35;
   --color-accent-dim: #cc5529;
   --color-border: #222222;
+  color-scheme: dark;
 
   --text-hero: clamp(64px, 10vw, 140px);
   --text-role: clamp(20px, 3vw, 36px);
@@ -35,6 +36,31 @@
   --space-lg: 64px;
   --space-xl: 128px;
   --space-section: clamp(80px, 12vh, 160px);
+}
+
+/* Light theme */
+[data-theme="light"] {
+  --color-bg: #f5f2ed;
+  --color-bg-elevated: #eae6df;
+  --color-text: #0f0f0f;
+  --color-text-muted: #6b6460;
+  --color-accent: #ff6b35;
+  --color-accent-dim: #cc5529;
+  --color-border: #cdc9c0;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --color-bg: #f5f2ed;
+    --color-bg-elevated: #eae6df;
+    --color-text: #0f0f0f;
+    --color-text-muted: #6b6460;
+    --color-accent: #ff6b35;
+    --color-accent-dim: #cc5529;
+    --color-border: #cdc9c0;
+    color-scheme: light;  /* ensures browser-native UI (scrollbars, inputs) match */
+  }
 }
 
 *, *::before, *::after {
@@ -62,6 +88,7 @@ body {
   color: var(--color-text);
   font-family: var(--font-syne), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 /* Skip link */
@@ -95,6 +122,13 @@ body {
 .word {
   display: inline-block;
   white-space: nowrap;
+}
+
+/* About section — collapse to single column on mobile */
+@media (max-width: 640px) {
+  .about-grid {
+    grid-template-columns: 1fr !important;
+  }
 }
 
 @keyframes pulse {

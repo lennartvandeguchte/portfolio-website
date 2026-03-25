@@ -1,9 +1,7 @@
 'use client'
 import { useRef, useEffect, useState } from 'react'
-import Link from 'next/link'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-
 gsap.registerPlugin(ScrollTrigger)
 
 const NAV_LINKS = [
@@ -49,23 +47,12 @@ export function Nav() {
         background: 'var(--color-bg-elevated)',
         borderBottom: '1px solid var(--color-border)',
         display: 'flex',
-        justifyContent: 'space-between',
+        justifyContent: 'flex-end',
         alignItems: 'center',
         opacity: 0,
       }}
       aria-label="Main navigation"
     >
-      <Link
-        href="/"
-        style={{
-          fontSize: 'var(--text-nav)',
-          fontWeight: 700,
-          textDecoration: 'none',
-          color: 'var(--color-text)',
-        }}
-      >
-        LVdG
-      </Link>
       <ul style={{ display: 'flex', gap: 'var(--space-md)', listStyle: 'none' }}>
         {NAV_LINKS.map(({ label, href }) => (
           <li key={label}>
