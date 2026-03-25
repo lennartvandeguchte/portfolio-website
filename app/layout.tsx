@@ -35,7 +35,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <a href="#main-content" className="skip-link">
           Skip to content
         </a>
-        <div style={{ position: 'fixed', top: 'var(--space-sm)', right: 'var(--space-md)', zIndex: 101 }}>
+        <div style={{ position: 'fixed', top: 'var(--space-sm)', left: 'var(--space-md)', zIndex: 101 }}>
           <ThemeToggle />
         </div>
         <PageTransition>{children}</PageTransition>
