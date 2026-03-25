@@ -2,13 +2,26 @@
 import { useRef, useEffect } from 'react'
 import gsap from 'gsap'
 
+// TODO: Replace bioText with your own words — recruiters read this section to decide
+// whether to reach out. Keep it honest and specific (100–150 words works well).
+// Include: what you do, what you care about, what you're looking for.
+const bioText =
+  "Replace this with your own bio. Write about what you build, what drives you, and what kind of work you're looking for. This should be in your own voice — not a job description."
+
+// TODO: Fill in your details below
+const details = [
+  { label: 'Role', value: 'Creative Developer' },
+  { label: 'Based', value: '[Location]' },
+  { label: 'Available', value: '[Yes / No — timeframe]' },
+]
+
 export function About() {
   const sectionRef = useRef<HTMLElement>(null)
 
   useEffect(() => {
     const section = sectionRef.current
     if (!section || typeof window === 'undefined') return
-    if (window.matchMedia('(hover: none)').matches) return // skip on touch
+    if (window.matchMedia('(hover: none)').matches) return
 
     const words = section.querySelectorAll('.about-word')
 
@@ -40,9 +53,6 @@ export function About() {
     return () => window.removeEventListener('mousemove', handleMouseMove)
   }, [])
 
-  const bioText =
-    "I build interactive digital experiences that live at the intersection of engineering and design. I care deeply about the craft — the timing of an animation, the rhythm of a layout, the moment a user feels genuine delight."
-
   return (
     <section
       id="about"
@@ -60,13 +70,62 @@ export function About() {
       >
         About
       </h2>
-      <p style={{ fontSize: 'var(--text-body)', lineHeight: 1.6, maxWidth: '700px' }}>
-        {bioText.split(' ').map((word, i) => (
-          <span key={i} className="about-word" style={{ display: 'inline-block', marginRight: '0.3em' }}>
-            {word}
-          </span>
-        ))}
-      </p>
+
+      <div
+        style={{
+          display: 'grid',
+          gridTemplateColumns: 'minmax(0, 2fr) minmax(0, 1fr)',
+          gap: 'var(--space-lg)',
+          maxWidth: '960px',
+          alignItems: 'start',
+        }}
+        className="about-grid"
+      >
+        <p style={{ fontSize: 'var(--text-body)', lineHeight: 1.6 }}>
+          {bioText.split(' ').map((word, i) => (
+            <span
+              key={i}
+              className="about-word"
+              style={{ display: 'inline-block', marginRight: '0.3em' }}
+            >
+              {word}
+            </span>
+          ))}
+        </p>
+
+        <dl
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 'var(--space-sm)',
+            paddingTop: '0.2em',
+          }}
+        >
+          {details.map(({ label, value }) => (
+            <div key={label}>
+              <dt
+                style={{
+                  fontSize: 'var(--text-small)',
+                  color: 'var(--color-text-muted)',
+                  letterSpacing: '0.05em',
+                  textTransform: 'uppercase',
+                  marginBottom: '2px',
+                }}
+              >
+                {label}
+              </dt>
+              <dd
+                style={{
+                  fontSize: 'var(--text-body)',
+                  color: 'var(--color-text)',
+                }}
+              >
+                {value}
+              </dd>
+            </div>
+          ))}
+        </dl>
+      </div>
     </section>
   )
 }
