@@ -32,65 +32,85 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
       >
         ← Back
       </Link>
-      <h1
-        style={{
-          fontSize: 'var(--text-h1)',
-          fontWeight: 800,
-          marginTop: 'var(--space-md)',
-          letterSpacing: '-0.02em',
-          lineHeight: 1.1,
-        }}
-      >
-        {project.title}
-      </h1>
-      {project.description && (
-        <p
+
+      <header style={{ marginTop: 'var(--space-md)', paddingBottom: 'var(--space-lg)', borderBottom: '1px solid var(--color-border)' }}>
+        <h1
           style={{
-            fontSize: 'var(--text-body)',
-            color: 'var(--color-text-muted)',
-            marginTop: 'var(--space-sm)',
+            fontSize: 'var(--text-h1)',
+            fontWeight: 800,
+            letterSpacing: '-0.02em',
+            lineHeight: 1.1,
           }}
         >
-          {project.description}
-        </p>
-      )}
-      {project.tags && project.tags.length > 0 && (
-        <p
-          style={{
-            marginTop: 'var(--space-xs)',
-            fontSize: 'var(--text-small)',
-            color: 'var(--color-text-muted)',
-            letterSpacing: '0.05em',
-          }}
-        >
-          {project.tags.join(' / ')}
-        </p>
-      )}
-      <div style={{ display: 'flex', gap: 'var(--space-sm)', marginTop: 'var(--space-sm)' }}>
-        {project.url && (
-          <a
-            href={project.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ color: 'var(--color-accent)', fontSize: 'var(--text-small)' }}
+          {project.title}
+        </h1>
+        {project.description && (
+          <p
+            style={{
+              fontSize: 'var(--text-body)',
+              color: 'var(--color-text-muted)',
+              marginTop: 'var(--space-sm)',
+              maxWidth: '560px',
+              lineHeight: 1.5,
+            }}
           >
-            Live site ↗
-          </a>
+            {project.description}
+          </p>
         )}
-        {project.github && (
-          <a
-            href={project.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ color: 'var(--color-accent)', fontSize: 'var(--text-small)' }}
-          >
-            GitHub ↗
-          </a>
-        )}
-      </div>
-      <article
-        style={{ marginTop: 'var(--space-lg)', fontSize: 'var(--text-body)', lineHeight: 1.6 }}
-      >
+        <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: 'var(--space-sm)', marginTop: 'var(--space-md)' }}>
+          {project.tags && project.tags.length > 0 && (
+            <ul
+              style={{
+                display: 'flex',
+                flexWrap: 'wrap',
+                gap: '8px',
+                listStyle: 'none',
+                flexGrow: 1,
+              }}
+            >
+              {project.tags.map((tag) => (
+                <li
+                  key={tag}
+                  style={{
+                    fontSize: 'var(--text-small)',
+                    color: 'var(--color-text-muted)',
+                    border: '1px solid var(--color-border)',
+                    borderRadius: '4px',
+                    padding: '4px 10px',
+                    letterSpacing: '0.03em',
+                  }}
+                >
+                  {tag}
+                </li>
+              ))}
+            </ul>
+          )}
+          <div style={{ display: 'flex', gap: 'var(--space-sm)', flexShrink: 0 }}>
+            {project.url && (
+              <a
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: 'var(--color-accent)', fontSize: 'var(--text-small)', textDecoration: 'none', fontWeight: 600 }}
+              >
+                Live site ↗
+              </a>
+            )}
+            {project.github && (
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: 'var(--color-accent)', fontSize: 'var(--text-small)', textDecoration: 'none', fontWeight: 600 }}
+              >
+                GitHub ↗
+              </a>
+            )}
+          </div>
+        </div>
+      </header>
+
+      <article className="prose" style={{ marginTop: 'var(--space-lg)' }}>
         <MDXRemote source={project.content} />
       </article>
     </main>
