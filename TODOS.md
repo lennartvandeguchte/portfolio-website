@@ -2,8 +2,8 @@
 
 ## v2 — Post-launch
 
-- [ ] **Light/dark mode toggle** — Design a light color palette that complements the dark identity. Requires: second set of CSS custom properties, toggle component, `prefers-color-scheme` detection. Motivation: recruiter-friendliness in bright environments, accessibility. Blocked by: v1 launch.
+- [x] **Light/dark mode toggle** — Light palette (#f5f2ed warm off-white) implemented. Toggle in nav, `prefers-color-scheme` detection, localStorage persistence, no-flash inline script. Accent (#ff6b35) passes AA at large text sizes on both themes.
 
 ## Pre-launch
 
-- [ ] **About section content + layout** — Write authentic bio copy (not AI-generated). Define: how many words, what to include (role, interests, what you're looking for), layout (single column? two-column with photo?). The about section is where recruiters decide to reach out — placeholder copy kills conversion. Blocked by: nothing, just needs writing.
+- [ ] **About section content** — Layout implemented (two-column: bio left, role/location/availability right, collapses to single column on mobile). **Fill in your own bio copy** in `components/About.tsx` (`bioText` constant) and update the `details` array with your role, location, and availability. Keep bio 100–150 words, in your own voice.
