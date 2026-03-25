@@ -149,18 +149,6 @@ export function ProjectCard({ project }: { project: Project }) {
             {project.description}
           </p>
         )}
-        {project.tags && project.tags.length > 0 && (
-          <p
-            style={{
-              marginTop: 'var(--space-xs)',
-              fontSize: 'var(--text-small)',
-              color: 'var(--color-text-muted)',
-              letterSpacing: '0.05em',
-            }}
-          >
-            {project.tags.join(' / ')}
-          </p>
-        )}
       </Link>
     </div>
   )

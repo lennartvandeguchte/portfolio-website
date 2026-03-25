@@ -135,3 +135,78 @@ body {
   0%, 100% { opacity: 0.4; transform: translateY(0); }
   50% { opacity: 1; transform: translateY(4px); }
 }
+
+/* Project page prose content */
+.prose {
+  font-size: var(--text-body);
+  line-height: 1.7;
+  color: var(--color-text);
+}
+
+.prose h2 {
+  font-size: clamp(17px, 2vw, 22px);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  margin-top: var(--space-lg);
+  margin-bottom: var(--space-sm);
+  color: var(--color-text);
+}
+
+.prose h3 {
+  font-size: var(--text-body);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  margin-top: var(--space-md);
+  margin-bottom: var(--space-xs);
+  color: var(--color-text-muted);
+}
+
+.prose p {
+  margin-bottom: var(--space-sm);
+  max-width: 68ch;
+}
+
+.prose p:last-child {
+  margin-bottom: 0;
+}
+
+.prose a {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.prose ul,
+.prose ol {
+  padding-left: var(--space-md);
+  margin-bottom: var(--space-sm);
+}
+
+.prose li {
+  margin-bottom: var(--space-xs);
+}
+
+.prose code {
+  font-size: 0.9em;
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  padding: 2px 6px;
+}
+
+.prose pre {
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: var(--space-md);
+  overflow-x: auto;
+  margin-bottom: var(--space-sm);
+}
+
+.prose pre code {
+  background: none;
+  border: none;
+  padding: 0;
+}
