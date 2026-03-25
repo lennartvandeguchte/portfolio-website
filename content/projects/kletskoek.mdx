@@ -1,0 +1,26 @@
+---
+title: "Kletskoek"
+description: "A multiplayer word-bluffing party game for iOS and Android"
+tags: ["React Native", "Expo", "Firebase", "TypeScript"]
+date: "2025-05"
+github: "https://github.com/lennartvandeguchte/woordenboekspel"
+image: "/kletskoek-logo.webp"
+featured: true
+order: 3
+---
+
+## The Problem
+
+Every group has that one friend who pulls out a board game at a party — except nobody brought one. Kletskoek (Dutch for "nonsense") puts a classic word-bluffing game in everyone's pocket. No cards, no board, no setup — just a room code and a willingness to lie convincingly.
+
+## The Approach
+
+Built with React Native and Expo for cross-platform reach on iOS and Android. The game runs entirely on Firebase Firestore using real-time `onSnapshot` listeners, so every player sees phase changes, definitions, and scores the instant they happen — no polling, no refresh buttons.
+
+Each round cycles through six phases: a round leader reveals an obscure (often hilarious) word, everyone invents a fake definition, the leader reads them all aloud, players vote on which one is real, and the results reveal who got fooled. You score points for guessing right *and* for tricking others with your bluff.
+
+Word packs live in Firestore so new content can be pushed without an app update. The app supports Dutch and English, with locale detection and in-app language switching via i18n-js.
+
+## The Result
+
+A polished party game published on both the App Store and Google Play. Players join with a simple room code, pick a word pack, and start bluffing within seconds. Features like configurable writing timers, skip limits, a kudos system, and automatic player reconnection make it feel like a proper game — not a side project.

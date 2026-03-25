@@ -12,11 +12,10 @@ export function ProjectCard({ project }: { project: Project }) {
   const titleRef = useRef<HTMLHeadingElement>(null)
   const descRef = useRef<HTMLParagraphElement>(null)
   const cardRef = useRef<HTMLDivElement>(null)
-  const bgRef = useRef<HTMLDivElement>(null)
+  const imgRef = useRef<HTMLDivElement>(null)
   const { loaded } = useFontLoaded()
   const split = useSplitType(titleRef, 'chars')
 
-  // Scroll-triggered entrance
   useEffect(() => {
     if (!split?.chars || !cardRef.current) return
     const chars = split.chars
@@ -40,6 +39,13 @@ export function ProjectCard({ project }: { project: Project }) {
             { clipPath: 'inset(0 0 0% 0)', opacity: 1, duration: 0.5, delay: 0.3, ease: 'power2.out' }
           )
         }
+        if (imgRef.current) {
+          gsap.fromTo(
+            imgRef.current,
+            { opacity: 0, x: 20 },
+            { opacity: 0.12, x: 0, duration: 0.6, delay: 0.2, ease: 'power2.out' }
+          )
+        }
       },
       once: true,
     })
@@ -58,7 +64,7 @@ export function ProjectCard({ project }: { project: Project }) {
         overwrite: true,
       })
     })
-    if (bgRef.current) gsap.to(bgRef.current, { opacity: 0.2, duration: 0.3 })
+    if (imgRef.current) gsap.to(imgRef.current, { opacity: 0.25, scale: 1.05, duration: 0.4, ease: 'power2.out' })
   }
 
   const handleMouseLeave = () => {
@@ -72,7 +78,7 @@ export function ProjectCard({ project }: { project: Project }) {
         overwrite: true,
       })
     })
-    if (bgRef.current) gsap.to(bgRef.current, { opacity: 0.1, duration: 0.3 })
+    if (imgRef.current) gsap.to(imgRef.current, { opacity: 0.12, scale: 1, duration: 0.4, ease: 'power2.out' })
   }
 
   return (
@@ -85,20 +91,27 @@ export function ProjectCard({ project }: { project: Project }) {
         overflow: 'hidden',
       }}
     >
-      {/* Background */}
-      <div
-        ref={bgRef}
-        style={{
-          position: 'absolute',
-          inset: 0,
-          backgroundImage: project.image ? `url(${project.image})` : undefined,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          opacity: 0.1,
-          filter: 'blur(2px)',
-          pointerEvents: 'none',
-        }}
-      />
+      {project.image && (
+        <div
+          ref={imgRef}
+          style={{
+            position: 'absolute',
+            right: 0,
+            top: '50%',
+            transform: 'translateY(-50%)',
+            width: 'clamp(200px, 28vw, 400px)',
+            height: 'clamp(120px, 15vw, 200px)',
+            backgroundImage: `url(${project.image})`,
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center',
+            opacity: 0,
+            pointerEvents: 'none',
+            maskImage: 'linear-gradient(to right, transparent 0%, black 30%)',
+            WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 30%)',
+          }}
+        />
+      )}
       <Link
         href={`/projects/${project.slug}`}
         style={{
