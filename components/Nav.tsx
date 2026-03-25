@@ -3,8 +3,6 @@ import { useRef, useEffect, useState } from 'react'
 import Link from 'next/link'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { ThemeToggle } from './ThemeToggle'
-
 gsap.registerPlugin(ScrollTrigger)
 
 const NAV_LINKS = [
@@ -67,16 +65,13 @@ export function Nav() {
       >
         LVdG
       </Link>
-      <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-md)' }}>
-        <ul style={{ display: 'flex', gap: 'var(--space-md)', listStyle: 'none' }}>
-          {NAV_LINKS.map(({ label, href }) => (
-            <li key={label}>
-              <NavLink href={href} label={label} />
-            </li>
-          ))}
-        </ul>
-        <ThemeToggle />
-      </div>
+      <ul style={{ display: 'flex', gap: 'var(--space-md)', listStyle: 'none' }}>
+        {NAV_LINKS.map(({ label, href }) => (
+          <li key={label}>
+            <NavLink href={href} label={label} />
+          </li>
+        ))}
+      </ul>
     </nav>
   )
 }

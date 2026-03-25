@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Syne } from 'next/font/google'
 import './globals.css'
 import { PageTransition } from '@/components/PageTransition'
+import { ThemeToggle } from '@/components/ThemeToggle'
 
 const syne = Syne({
   subsets: ['latin'],
@@ -34,6 +35,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <a href="#main-content" className="skip-link">
           Skip to content
         </a>
+        <div style={{ position: 'fixed', top: 'var(--space-sm)', right: 'var(--space-md)', zIndex: 101 }}>
+          <ThemeToggle />
+        </div>
         <PageTransition>{children}</PageTransition>
       </body>
     </html>
