@@ -58,7 +58,7 @@ export function ProjectCard({ project }: { project: Project }) {
         overwrite: true,
       })
     })
-    if (bgRef.current) gsap.to(bgRef.current, { opacity: 0.2, duration: 0.3 })
+    if (bgRef.current) gsap.to(bgRef.current, { opacity: 0.3, duration: 0.3 })
   }
 
   const handleMouseLeave = () => {
@@ -72,7 +72,7 @@ export function ProjectCard({ project }: { project: Project }) {
         overwrite: true,
       })
     })
-    if (bgRef.current) gsap.to(bgRef.current, { opacity: 0.1, duration: 0.3 })
+    if (bgRef.current) gsap.to(bgRef.current, { opacity: 0.18, duration: 0.3 })
   }
 
   return (
@@ -94,7 +94,7 @@ export function ProjectCard({ project }: { project: Project }) {
           backgroundImage: project.image ? `url(${project.image})` : undefined,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          opacity: 0.1,
+          opacity: 0.18,
           filter: 'blur(2px)',
           pointerEvents: 'none',
         }}
