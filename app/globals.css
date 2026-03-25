@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #0a0a0a;
+  --color-bg-elevated: #141414;
+  --color-text: #f0f0f0;
+  --color-text-muted: #888888;
+  --color-accent: #ff6b35;
+  --color-accent-dim: #cc5529;
+  --color-border: #222222;
+  --font-family-syne: var(--font-syne), system-ui, sans-serif;
+}
+
+:root {
+  --color-bg: #0a0a0a;
+  --color-bg-elevated: #141414;
+  --color-text: #f0f0f0;
+  --color-text-muted: #888888;
+  --color-accent: #ff6b35;
+  --color-accent-dim: #cc5529;
+  --color-border: #222222;
+
+  --text-hero: clamp(64px, 10vw, 140px);
+  --text-role: clamp(20px, 3vw, 36px);
+  --text-h1: clamp(40px, 6vw, 80px);
+  --text-h2: clamp(28px, 4vw, 48px);
+  --text-h3: clamp(20px, 2.5vw, 28px);
+  --text-body: clamp(16px, 1.2vw, 20px);
+  --text-small: clamp(13px, 1vw, 15px);
+  --text-nav: clamp(14px, 1vw, 16px);
+
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 32px;
+  --space-lg: 64px;
+  --space-xl: 128px;
+  --space-section: clamp(80px, 12vh, 160px);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-syne), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  padding: 8px 16px;
+  background: var(--color-accent);
+  color: #fff;
+  z-index: 9999;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* Visually hidden */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* SplitType word spans — prevent mid-word line breaks */
+.word {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.4; transform: translateY(0); }
+  50% { opacity: 1; transform: translateY(4px); }
+}
