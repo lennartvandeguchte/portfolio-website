@@ -2,17 +2,12 @@
 import { useRef, useEffect } from 'react'
 import gsap from 'gsap'
 
-// TODO: Replace bioText with your own words — recruiters read this section to decide
-// whether to reach out. Keep it honest and specific (100–150 words works well).
-// Include: what you do, what you care about, what you're looking for.
 const bioText =
-  "Replace this with your own bio. Write about what you build, what drives you, and what kind of work you're looking for. This should be in your own voice — not a job description."
+  "We build software that does something meaningful, for the people using it and for the world they live in. Tools that are simple on the surface and thoughtful underneath. We ship things, share them, and care about what happens after."
 
-// TODO: Fill in your details below
 const details = [
-  { label: 'Role', value: 'Creative Developer' },
-  { label: 'Based', value: '[Location]' },
-  { label: 'Available', value: '[Yes / No — timeframe]' },
+  { label: 'Focus', value: 'AI and software development' },
+  { label: 'Based', value: 'Amsterdam' },
 ]
 
 export function About() {
@@ -57,7 +52,7 @@ export function About() {
     <section
       id="about"
       ref={sectionRef}
-      style={{ padding: 'var(--space-section) var(--space-md)' }}
+      style={{ padding: 'var(--space-section) var(--space-md)', marginTop: '20vh' }}
       aria-label="About"
     >
       <h2

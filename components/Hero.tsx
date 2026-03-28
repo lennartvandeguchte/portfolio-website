@@ -119,7 +119,7 @@ export function Hero() {
           color: 'var(--color-text-muted)',
         }}
       >
-        {'AI and software development'.split(' ').map((word, i) => (
+        {'By Lennart van de Guchte'.split(' ').map((word, i) => (
           <span
             key={i}
             style={{ display: 'inline-block', marginRight: '0.3em', opacity: loaded ? undefined : 0 }}

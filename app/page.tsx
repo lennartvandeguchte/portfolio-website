@@ -13,6 +13,7 @@ export default function HomePage() {
       <Nav />
       <main id="main-content" style={{ maxWidth: '1200px', margin: '0 auto' }}>
         <Hero />
+        <About />
         <section
           id="work"
           aria-label="Work"
@@ -34,7 +35,6 @@ export default function HomePage() {
             </div>
           )}
         </section>
-        <About />
         <Contact />
       </main>
     </>
