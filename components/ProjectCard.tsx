@@ -101,7 +101,7 @@ export function ProjectCard({ project }: { project: Project }) {
             transform: 'translateY(-50%)',
             width: 'clamp(200px, 28vw, 400px)',
             height: 'clamp(120px, 15vw, 200px)',
-            backgroundImage: `url(${project.image})`,
+            backgroundImage: `url(${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}${project.image})`,
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'center',
