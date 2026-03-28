@@ -185,7 +185,7 @@ Max content width: 1200px, centered. Project cards: full-width within container.
 ├─────────────────────────────────────────────┤  ← ~85vh
 │                                              │
 │         LENNART VAN DE GUCHTE               │  ← 120px+ variable font
-│         Creative Developer                   │  ← role subtitle, word-by-word fade-in
+│         AI and software development        │  ← role subtitle, word-by-word fade-in
 │                                              │
 │         ↓ scroll                             │  ← kinetic scroll indicator
 ├─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─┤  ← first project card peeks above fold
@@ -209,7 +209,7 @@ Max content width: 1200px, centered. Project cards: full-width within container.
 
 1. **Hero Section** (height: ~85vh, first project card peeks below)
    - Your name rendered in massive type (120px+)
-   - Role subtitle: "Creative Developer" (or similar) — visible on load, animates in word-by-word after name (0.4s per word, 0.15s stagger)
+   - Role subtitle: "AI and software development" (or similar) — visible on load, animates in word-by-word after name (0.4s per word, 0.15s stagger)
    - **Desktop:** on hover, individual letters scatter 20-80px in random directions over 0.6s (elastic easing), reassemble on mouseout over 0.4s (power2.out). Re-hovering mid-reassembly restarts the scatter.
    - **Mobile:** auto-animate on load — letters scatter outward then reassemble once as an entrance moment (after font load + fade-in). No tap required.
    - Scroll indicator animates with kinetic text: "scroll" written in a looping animation

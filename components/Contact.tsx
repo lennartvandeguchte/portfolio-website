@@ -3,9 +3,8 @@ import { useRef } from 'react'
 import gsap from 'gsap'
 
 const CONTACT_LINKS = [
-  { label: 'Email', href: 'mailto:hello@lennartvandeguchte.com', display: 'hello@lennartvandeguchte.com' },
-  { label: 'GitHub', href: 'https://github.com/lennartvandeguchte', display: 'GitHub' },
-  { label: 'LinkedIn', href: 'https://linkedin.com/in/lennartvandeguchte', display: 'LinkedIn' },
+  { label: 'Email', href: 'mailto:lennartvandeguchte@gmail.com', display: 'lennartvandeguchte@gmail.com' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/lennart-van-de-guchte-888850119/', display: 'LinkedIn' },
 ]
 
 function ContactLink({ href, display }: { href: string; display: string }) {
@@ -39,7 +38,7 @@ function ContactLink({ href, display }: { href: string; display: string }) {
       onMouseLeave={handleLeave}
       style={{
         display: 'block',
-        fontSize: 'var(--text-h2)',
+        fontSize: 'var(--text-h3)',
         fontWeight: 700,
         textDecoration: 'none',
         color: 'var(--color-text)',

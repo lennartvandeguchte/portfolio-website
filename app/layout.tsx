@@ -13,7 +13,7 @@ const syne = Syne({
 
 export const metadata: Metadata = {
   title: 'Menura Labs — AI and software development',
-  description: 'Creative developer building interactive experiences with typography and motion.',
+  description: 'AI and software development.',
 }
 
 const themeInitScript = `
