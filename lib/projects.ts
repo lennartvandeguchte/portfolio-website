@@ -11,6 +11,8 @@ export interface Project {
   url?: string
   github?: string
   image?: string
+  ios?: string
+  android?: string
   featured?: boolean
   order?: number
   content: string
