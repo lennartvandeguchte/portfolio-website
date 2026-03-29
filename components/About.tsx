@@ -3,7 +3,7 @@ import { useRef, useEffect } from 'react'
 import gsap from 'gsap'
 
 const bioText =
-  "We build software that does something meaningful, for the people using it and for the world they live in. Tools that are simple on the surface and thoughtful underneath. We ship things, share them, and care about what happens after."
+  "We build software that has a meaningful impact, on the people using it and for the world they live in. Tools that are simple on the surface and thoughtful underneath. We ship things, share them, and care about what happens after."
 
 const details = [
   { label: 'Focus', value: 'AI and software development' },
