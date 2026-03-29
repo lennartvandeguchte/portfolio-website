@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import { getProjectBySlug, getAllProjects } from '@/lib/projects'
+import { PhoneMockup, PhoneShowcase } from '@/components/PhoneMockup'
 
 export async function generateStaticParams() {
   const projects = getAllProjects()
@@ -106,12 +107,32 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                 GitHub ↗
               </a>
             )}
+            {project.ios && (
+              <a
+                href={project.ios}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: 'var(--color-accent)', fontSize: 'var(--text-small)', textDecoration: 'none', fontWeight: 600 }}
+              >
+                App Store ↗
+              </a>
+            )}
+            {project.android && (
+              <a
+                href={project.android}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: 'var(--color-accent)', fontSize: 'var(--text-small)', textDecoration: 'none', fontWeight: 600 }}
+              >
+                Google Play ↗
+              </a>
+            )}
           </div>
         </div>
       </header>
 
       <article className="prose" style={{ marginTop: 'var(--space-lg)' }}>
-        <MDXRemote source={project.content} />
+        <MDXRemote source={project.content} components={{ PhoneMockup, PhoneShowcase }} />
       </article>
     </main>
   )

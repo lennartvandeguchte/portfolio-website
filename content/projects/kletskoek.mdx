@@ -3,24 +3,32 @@ title: "Kletskoek"
 description: "A multiplayer word-bluffing party game for iOS and Android"
 tags: ["React Native", "Expo", "Firebase", "TypeScript"]
 date: "2025-05"
-github: "https://github.com/lennartvandeguchte/woordenboekspel"
 image: "/kletskoek-logo.webp"
 featured: true
 order: 1
+ios: "https://apps.apple.com/nl/app/kletskoek/id6751756995"
+android: "https://play.google.com/store/apps/details?id=com.dalf.kletskoek"
 ---
 
-## The Problem
+Kletskoek is a lighthearted party game that combines language, creativity, and humor. The idea is simple: one player chooses an unknown word, and the rest come up with a clever, funny, or convincing definition.
 
-Every group has that one friend who pulls out a board game at a party — except nobody brought one. Kletskoek (Dutch for "nonsense") puts a classic word-bluffing game in everyone's pocket. No cards, no board, no setup — just a room code and a willingness to lie convincingly.
+<PhoneShowcase>
+  <PhoneMockup src="/kletskoek-home.jpeg" alt="Kletskoek home screen with Start, Join, and Rules buttons" />
+  <PhoneMockup src="/kletskoek-gameplay.jpeg" alt="Kletskoek gameplay screen showing a word round with timer and scoreboard" />
+</PhoneShowcase>
 
-## The Approach
+## The Idea
 
-Built with React Native and Expo for cross-platform reach on iOS and Android. The game runs entirely on Firebase Firestore using real-time `onSnapshot` listeners, so every player sees phase changes, definitions, and scores the instant they happen — no polling, no refresh buttons.
+Kletskoek is based on Balderdash, a classic bluffing game that never got a decent app adaptation, let alone one in Dutch. Seeing how well party game apps like 30 Seconds and Undercover had found their audience, it felt like an obvious gap worth filling.
 
-Each round cycles through six phases: a round leader reveals an obscure (often hilarious) word, everyone invents a fake definition, the leader reads them all aloud, players vote on which one is real, and the results reveal who got fooled. You score points for guessing right *and* for tricking others with your bluff.
+The concept translates naturally to mobile. One player picks an obscure word that is provided by the app, everyone else invents a definition, and the group tries to spot the real one among the bluffs. Simple to explain, hard to put down, and genuinely funny when someone's fake definition is more convincing than the truth.
 
-Word packs live in Firestore so new content can be pushed without an app update. The app supports Dutch and English, with locale detection and in-app language switching via i18n-js.
+## The Build
 
-## The Result
+React Native and Expo handle cross-platform delivery on iOS and Android. Firebase Firestore powers the real-time experience. Phase changes, submitted definitions, and scores appear instantly for every player in the room, no polling required.
 
-A polished party game published on both the App Store and Google Play. Players join with a simple room code, pick a word pack, and start bluffing within seconds. Features like configurable writing timers, skip limits, a kudos system, and automatic player reconnection make it feel like a proper game — not a side project.
+Word packs live in Firestore, so new content ships without an app update. The game currently supports Dutch and English with locale detection and in-app language switching.
+
+## Shipped
+
+Live on the App Store and Google Play. Players are bluffing within seconds of opening the app.
