@@ -1,5 +1,3 @@
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ''
-
 export function PhoneMockup({ src, alt }: { src: string; alt: string }) {
   return (
     <div
@@ -25,7 +23,7 @@ export function PhoneMockup({ src, alt }: { src: string; alt: string }) {
       />
       {/* Screen */}
       <img
-        src={`${basePath}${src}`}
+        src={src}
         alt={alt}
         style={{
           width: '100%',
