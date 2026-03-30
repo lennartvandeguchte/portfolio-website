@@ -21,11 +21,11 @@
   --color-border: #222222;
   color-scheme: dark;
 
-  --text-hero: clamp(64px, 10vw, 140px);
-  --text-role: clamp(20px, 3vw, 36px);
-  --text-h1: clamp(40px, 6vw, 80px);
-  --text-h2: clamp(28px, 4vw, 48px);
-  --text-h3: clamp(20px, 2.5vw, 28px);
+  --text-hero: clamp(36px, 10vw, 140px);
+  --text-role: clamp(16px, 3vw, 36px);
+  --text-h1: clamp(24px, 6vw, 80px);
+  --text-h2: clamp(20px, 4vw, 48px);
+  --text-h3: clamp(17px, 2.5vw, 28px);
   --text-body: clamp(16px, 1.2vw, 20px);
   --text-small: clamp(13px, 1vw, 15px);
   --text-nav: clamp(14px, 1vw, 16px);
@@ -124,8 +124,15 @@ body {
   white-space: nowrap;
 }
 
-/* About section — collapse to single column on mobile */
+/* Mobile responsive overrides */
 @media (max-width: 640px) {
+  :root {
+    --space-md: 20px;
+    --space-lg: 40px;
+    --space-xl: 64px;
+  }
+
+  /* About section — collapse to single column on mobile */
   .about-grid {
     grid-template-columns: 1fr !important;
   }
